@@ -1,19 +1,17 @@
 # icinga1-rocketchat-notification
 Notification vie Rocket.Chat with ICINGA1. Inspired by https://github.com/BackIsBachus/icinga2-rocketchat-notification
 
-****
-Removed Link to Host/Service in Base Version. Maybee will add this feature later, but only for THRUK.
-****
+### Removed Link to Host/Service in Base Version. Maybee will add this feature later, but only for THRUK.
 
 ****
 Installation
 
-To use the icinga1-rocket-chat-notification follow this little howto:
+To use the icinga1-rocket-chat-notification follow this little howto as example:
 
-- cd to your ICINGA1/libexec dir.
-- git clone this repo
-- Make sure the two .sh files are executeable and you have curl installed.
-- Insert the follwing in your ICINGA1 "notifications command definitions config":
+* cd to your ICINGA1/libexec dir.
+* git clone this repo
+* Make sure the two .sh files are executeable and you have curl installed.
+* Insert the follwing in your ICINGA1 "notifications command definitions config":
 
 ```
 # "notify-host-by-rocketchat" command definition
@@ -30,7 +28,7 @@ define command{
 	}
 ```
 
-- Make sure you defined a contact for your notifiaction:
+* Make sure you defined a contact for your notifiction:
 
 ```
 # "user_rocketchat" contact definition
@@ -46,7 +44,7 @@ define contact{
         }
 ```
 
-- And finally check your contactgroups and template definition to use this.
+* And finally check your contactgroups and template definitions to use this new stuff.
 
 Done.
 ****
