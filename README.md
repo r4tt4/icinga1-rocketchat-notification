@@ -7,7 +7,7 @@ Removed Link to Host/Service in Base Version. Maybee will add this feature later
 
 ****
 Installation
-****
+
 To use the icinga1-rocket-chat-notification follow this little howto:
 
 - cd to your ICINGA1/libexec dir.
@@ -15,6 +15,7 @@ To use the icinga1-rocket-chat-notification follow this little howto:
 - Make sure the two .sh files are executeable and you have curl installed.
 - Insert the follwing in your ICINGA1 "notifications command definitions config":
 
+```
 # "notify-host-by-rocketchat" command definition
 define command{
         command_name    host-notify-by-rocketchat
@@ -27,9 +28,11 @@ define command{
         command_name    notify-by-rocketchat
         command_line    $USER1$/icinga1-rocketchat-notification/rocketchat-service-notify.sh $NOTIFICATIONTYPE$ $HOSTNAME$ $SERVICEDESC$ $SERVICESTATE$ $SERVICEOUTPUT$ $LONGDATETIME$
 	}
+```
 
 - Make sure you defined a contact for your notifiaction:
 
+```
 # "user_rocketchat" contact definition
 define contact{
         contact_name                    user_rocketchat
@@ -41,11 +44,12 @@ define contact{
         service_notification_commands   notify-by-rocketchat
         host_notification_commands      host-notify-by-rocketchat
         }
-
+```
 
 - And finally check your contactgroups and template definition to use this.
 
 Done.
+****
 
 Feel free to comment and change this for your needs.
 
